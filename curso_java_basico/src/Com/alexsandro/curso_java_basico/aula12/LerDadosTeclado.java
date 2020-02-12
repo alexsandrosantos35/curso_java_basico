@@ -37,6 +37,7 @@ public class LerDadosTeclado {
 		System.out.println("Sua quantidade de filhos é: " + qtdFilhos);
 		System.out.println("A sua altura é: " + altura);
 		System.out.println("Voçê tem pet:" + temPet);
+		//testando erro da master
 		
 
 	}
