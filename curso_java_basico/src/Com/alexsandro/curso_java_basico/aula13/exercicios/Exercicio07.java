@@ -11,9 +11,9 @@ public class Exercicio07 {
 		System.out.println("Entre com lado do quadrado:");
 		double lado = scan.nextDouble();
 		
-		double resultado = (lado * lado) * 2;
+		double resultado = Math.pow(lado, 2) * 2;
 		
-		System.out.println("O dobro da area do quadrodo é: " + resultado);
+		System.out.println("O dobro da area do quadrado é: " + resultado);
 
 	}
 
