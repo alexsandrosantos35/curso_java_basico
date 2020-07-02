@@ -44,7 +44,7 @@ public class Exercicio12 {
 		ir = (salarioBruto / 100) * percentual;
 		fgts = (salarioBruto / 100) * 11; 
 		inss = (salarioBruto / 100) * 10;
-		descontos = ir + fgts + inss;
+		descontos = ir + inss;
 		salarioLiquido = salarioBruto - descontos;
 		
 		System.out.println("Salário Bruto          : R$ " + salarioBruto);

@@ -8,12 +8,15 @@ public class Exercicio15 {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		double cateto1 = 0;
-		double cateto2 = 0;
-		double hipotenusa = 0;
-		String tipo
+		double lado1 = 0;
+		double lado2 = 0;
+		double lado3 = 0;
+		String tipo = "";
 		
-		if 
+		if ((lado1 + lado2) > lado3) || ((lado2 + lado3) > lado1)
+		|| ((lado1 + lado3) > lado2) {
+			System.out.println
+		} 
 
 	}
 
