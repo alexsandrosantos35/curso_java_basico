@@ -11,7 +11,7 @@ public class Exercicio17 {
 		System.out.println("Entre com o ano:");
 		int ano = scan.nextInt();
 		
-		if (ano % 4 == 0 ) {
+		if ((ano % 400 == 0) || ((ano % 4 == 0) && (ano % 100 != 0))) {
 			System.out.println("Ano bissexto");
 		}
 		else {
