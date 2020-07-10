@@ -65,13 +65,6 @@ public class Exercicio23 {
 		}
 		
 		System.out.println("Total a pagar: " + total);
-		
-	
-
-
-
-
-
 	}
 
 }
