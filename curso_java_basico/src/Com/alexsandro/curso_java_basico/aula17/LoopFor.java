@@ -1,6 +1,6 @@
 package Com.alexsandro.curso_java_basico.aula17;
 
-public class Exercicio17 {
+public class LoopFor {
 
 	public static void main(String[] args) {
 		
