@@ -19,7 +19,7 @@ public class Exercicio24 {
 		
 		System.out.println("Vetor A:");
 		
-		for (int i=0; i<vetorA.length; i++) {
+		for (int i=0; i<vetorA.length/2; i++) {
 			System.out.print(vetorA[i] + ", ");
 		}
 		

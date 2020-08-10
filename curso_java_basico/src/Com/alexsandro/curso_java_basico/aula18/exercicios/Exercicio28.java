@@ -2,7 +2,7 @@ package Com.alexsandro.curso_java_basico.aula18.exercicios;
 
 import java.util.Scanner;
 
-public class Exercicio25 {
+public class Exercicio28 {
 
 	public static void main(String[] args) {
 		
@@ -11,11 +11,12 @@ public class Exercicio25 {
 		int[] vetorB = new int[vetorA.length];
 		
 		for (int i=0; i<vetorA.length; i++) {
-			System.out.println("Entre co um número para a posição " + (i + 1));
+			System.out.println("Entre co um número para a posição " + (i + 1) + " do vetor A");
 			vetorA[i] = scan.nextInt();
-			
-			//Operador ternário
-			vetorB[i] = (vetorA[i] % 2 == 0) ? 1 : 0;
+		}
+		
+		for (int i=0; i<vetorA.length; i++) {
+			vetorB[vetorA.length - 1 - i] = vetorA[i];
 		}
 		
 		System.out.println("Vetor A");
@@ -34,7 +35,6 @@ public class Exercicio25 {
 		for (int i=0; i<vetorA.length; i++) {
 			System.out.print(vetorB[i] + ", ");
 		}
-		
 
 	}
 
