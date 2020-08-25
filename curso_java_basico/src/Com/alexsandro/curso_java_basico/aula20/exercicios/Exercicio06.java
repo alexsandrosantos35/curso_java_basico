@@ -18,15 +18,17 @@ public class Exercicio06 {
 		System.out.println("Jogador 2 = \"O\"");
 		
 		while (jogar) {
+			linhaValida = false;
+			colunaValida = false;
+			jogadaValida = false;
+			
 			if (jogada % 2 == 1) {
 				System.out.println("Vez do jogador 1.");
 				sinal = 'X';
-				jogada++;
 			}
 			else {
 				System.out.println("Vez do jogador 2.");
 				sinal = 'O';
-				jogada++;
 			}
 			
 			System.out.println("Entre com a linha(1-2-3)  e a  coluna (1-2-3)");
@@ -42,7 +44,7 @@ public class Exercicio06 {
 				}
 			}
 			
-			while (!colunaValida) {
+			while (!linhaValida) {
 				System.out.println("Entre com a linha:");
 				linha = scan.nextInt();
 				if ((linha == 1) || (linha == 2) || (linha == 3)) {
@@ -51,6 +53,66 @@ public class Exercicio06 {
 				else {
 					System.out.println("Linha inválida, tente novamente.");
 				}
+			}
+			
+			while (!colunaValida) {
+				System.out.println("Entre com a coluna:");
+				coluna = scan.nextInt();
+				if ((linha == 1) || (linha == 2) || (linha == 3)) {
+					colunaValida = true;
+				}
+				else {
+					System.out.println("Coluna inválida, tente novamente.");
+				}
+			}
+			
+			while (!jogadaValida) {
+				if ((jogoVelha[linha - 1][coluna - 1] != 'X') &&
+						(jogoVelha[linha - 1][coluna - 1] != 'O')) {
+					jogoVelha[linha - 1][coluna - 1] = sinal;
+					jogada++;
+					jogadaValida = true;
+				}
+				else {
+					System.out.println("Jogada inválida, tente novamente.");
+				}
+			}
+			
+			if (((jogoVelha[0][0] == 'X') && (jogoVelha[0][1] == 'X') && (jogoVelha[0][2] == 'X')) ||
+				((jogoVelha[1][0] == 'X') && (jogoVelha[1][1] == 'X') && (jogoVelha[1][2] == 'X')) ||
+				((jogoVelha[2][0] == 'X') && (jogoVelha[2][1] == 'X') && (jogoVelha[2][2] == 'X')) ||
+				((jogoVelha[0][0] == 'X') && (jogoVelha[1][0] == 'X') && (jogoVelha[2][0] == 'X')) ||
+				((jogoVelha[0][1] == 'X') && (jogoVelha[1][1] == 'X') && (jogoVelha[2][1] == 'X')) ||
+				((jogoVelha[0][2] == 'X') && (jogoVelha[1][2] == 'X') && (jogoVelha[2][2] == 'X')) ||
+				((jogoVelha[0][0] == 'X') && (jogoVelha[1][1] == 'X') && (jogoVelha[2][2] == 'X')) ||
+				((jogoVelha[0][2] == 'X') && (jogoVelha[1][1] == 'X') && (jogoVelha[2][0] == 'X'))) {
+				System.out.println("O jogador 1 ganhou!");
+				System.out.println();
+				jogar = false;
+			}
+			
+			else if (((jogoVelha[0][0] == 'O') && (jogoVelha[0][1] == 'O') && (jogoVelha[0][2] == 'O')) ||
+					((jogoVelha[1][0] == 'O') && (jogoVelha[1][1] == 'O') && (jogoVelha[1][2] == 'O')) ||
+					((jogoVelha[2][0] == 'O') && (jogoVelha[2][1] == 'O') && (jogoVelha[2][2] == 'O')) ||
+					((jogoVelha[0][0] == 'O') && (jogoVelha[1][0] == 'O') && (jogoVelha[2][0] == 'O')) ||
+					((jogoVelha[0][1] == 'O') && (jogoVelha[1][1] == 'O') && (jogoVelha[2][1] == 'O')) ||
+					((jogoVelha[0][2] == 'O') && (jogoVelha[1][2] == 'O') && (jogoVelha[2][2] == 'O')) ||
+					((jogoVelha[0][0] == 'O') && (jogoVelha[1][1] == 'O') && (jogoVelha[2][2] == 'O')) ||
+					((jogoVelha[0][2] == 'O') && (jogoVelha[1][1] == 'O') && (jogoVelha[2][0] == 'O'))) {
+					System.out.println("O jogador 2 ganhou!");
+					System.out.println();
+					jogar = false;
+				}
+			else if (jogada > 9) {
+				jogar = false; 
+				System.out.println("Empate!");
+			}
+			
+			for (int i=0; i<jogoVelha.length; i++) {
+				for (int j=0; j<jogoVelha[i].length; j++) {
+					System.out.print(jogoVelha[i][j] + " | ");
+				}
+				System.out.println();
 			}
 			
 		}
