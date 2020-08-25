@@ -58,7 +58,7 @@ public class Exercicio06 {
 			while (!colunaValida) {
 				System.out.println("Entre com a coluna:");
 				coluna = scan.nextInt();
-				if ((linha == 1) || (linha == 2) || (linha == 3)) {
+				if ((coluna == 1) || (coluna == 2) || (coluna == 3)) {
 					colunaValida = true;
 				}
 				else {
@@ -66,10 +66,13 @@ public class Exercicio06 {
 				}
 			}
 			
+			linha--;
+			coluna--;
+			
 			while (!jogadaValida) {
-				if ((jogoVelha[linha - 1][coluna - 1] != 'X') &&
-						(jogoVelha[linha - 1][coluna - 1] != 'O')) {
-					jogoVelha[linha - 1][coluna - 1] = sinal;
+				if ((jogoVelha[linha ][coluna] != 'X') &&
+						(jogoVelha[linha][coluna] != 'O')) {
+					jogoVelha[linha][coluna] = sinal;
 					jogada++;
 					jogadaValida = true;
 				}
